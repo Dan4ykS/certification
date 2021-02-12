@@ -1,117 +1,102 @@
-body{
-	background: #9fe29f;
+body {
+  background: #9fe29f;
 }
 
-
-ul{
-	margin-top: 50px;
-	font-size: 20px;
-	list-style: none;
-	padding-left: 0px;
+ul {
+  margin-top: 50px;
+  font-size: 20px;
+  list-style: none;
+  padding-left: 0px;
 }
 
-ul li{
-	width: 80%;
+ul li {
+  width: 80%;
 }
 
-.glyphicon-remove{
-	float: right;
-	color: #b31a1a;
+.glyphicon-remove {
+  float: right;
+  color: #b31a1a;
 }
 
-.list-item{
-	padding-left: 20px;
+.list-item {
+  padding-left: 20px;
 }
 
-#itemname{
-	background: #f9f6ea;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: block;
-    width: 50%;
-    padding: 0.5% 2%;
-    border: 1px solid #d8b836;
+#itemname {
+  background: #f9f6ea;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  width: 50%;
+  padding: 0.5% 2%;
+  border: 1px solid #d8b836;
 }
 
 #itemname:focus {
-    outline: none !important;
+  outline: none !important;
 }
-.glyphicon-trash{
-	padding-top: 5px;
-}
-
-#list li{
-background: #fff3c1; 
-     padding: 0.2% 1%; 
+.glyphicon-trash {
+  padding-top: 5px;
 }
 
-#donelist li{
-background: #cdfdcd; 
-     padding: 0.2% 1%; 
+#list li {
+  background: #fff3c1;
+  padding: 0.2% 1%;
 }
 
-.todolist{
-        padding: 1% 20%;
-    background: #f7e8ac;
+#donelist li {
+  background: #cdfdcd;
+  padding: 0.2% 1%;
 }
 
-.donelist{
-        padding: 1% 20%;
-    background: #9fe29f;
+.todolist {
+  padding: 1% 20%;
+  background: #f7e8ac;
 }
 
-.container-fluid{
-	padding-right: 0px; 
-     padding-left: 0px; 
-	
+.donelist {
+  padding: 1% 20%;
+  background: #9fe29f;
 }
 
-hr{
-	border-color: #000;
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
+hr {
+  border-color: #000;
+}
 
 @media only screen and (max-width: 950px) {
-
-.todolist{
-        padding: 2% 10%;
+  .todolist {
+    padding: 2% 10%;
     background: #f7e8ac;
-}
+  }
 
-.donelist{
-        padding: 2% 10%;
+  .donelist {
+    padding: 2% 10%;
     background: #9fe29f;
-}
-
-
+  }
 }
 @media only screen and (max-width: 742px) {
-
-
-.todolist{
-        padding: 3% 5%;
+  .todolist {
+    padding: 3% 5%;
     background: #f7e8ac;
-}
+  }
 
-.donelist{
-        padding: 3% 5%;
+  .donelist {
+    padding: 3% 5%;
     background: #9fe29f;
-}
-	
-#itemname{
-	
-	width: 60%;
-	
-}
+  }
 
-	}
+  #itemname {
+    width: 60%;
+  }
+}
 
 @media only screen and (max-width: 480px) {
-	
-#itemname{
-	
-	width: 80%;
-	
+  #itemname {
+    width: 80%;
+  }
 }
-
-	}

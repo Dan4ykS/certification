@@ -80,16 +80,16 @@ function addTodoItem(mode) {
   if (mode === 'todoList') {
     const itemContent = todoList[countToDoForLSRender];
     content.innerHTML = itemContent;
-    todoContainer.appendChild(newTodo);
     countToDoForLSRender += 1;
-    document.getElementById('noitem').style.display = 'none';
+    todoContainer.appendChild(newTodo);
+    changeVisibilityToDoTitle();
   } else if (mode === 'doneList') {
     checkbox.checked = true;
     const itemContent = doneList[countDoneForLSRender];
     content.innerHTML = itemContent;
     countDoneForLSRender += 1;
     doneContainer.appendChild(newTodo);
-    document.getElementById('doneitem').style.display = 'none';
+    changeVisibilityDoneTitle();
   } else {
     const itemContent = document.getElementById('itemname');
     todoList.push(itemContent.value);
@@ -98,7 +98,7 @@ function addTodoItem(mode) {
     itemContent.value = '';
     countToDo += 1;
     updateDataInLocalstorage();
-    rendrTitle();
+    changeVisibilityToDoTitle();
   }
 
   checkbox.addEventListener('change', function () {
@@ -126,7 +126,7 @@ function addTodoItem(mode) {
       }
     }
     updateDataInLocalstorage();
-    rendrTitle();
+    changeTitlesVisibility();
   });
 
   content.addEventListener('dblclick', function () {
@@ -192,23 +192,33 @@ function addTodoItem(mode) {
       }
     }
     updateDataInLocalstorage();
-    rendrTitle();
+    changeTitlesVisibility();
   });
 }
 
-function rendrTitle() {
-  if (countToDo === 0) {
-    document.getElementById('noitem').style.display = 'block';
-  }
+function changeVisibilityToDoTitle() {
+  const todoTitleStyles = document.getElementById('noitem').style;
   if (countToDo === 1) {
-    document.getElementById('noitem').style.display = 'none';
+    todoTitleStyles.display = 'none';
   }
+  if (countToDo === 0) {
+    todoTitleStyles.display = 'block';
+  }
+}
+
+function changeVisibilityDoneTitle() {
+  const doneTitleStyles = document.getElementById('doneitem').style;
   if (countDone === 0) {
-    document.getElementById('doneitem').style.display = 'block';
+    doneTitleStyles.display = 'block';
   }
   if (countDone === 1) {
-    document.getElementById('doneitem').style.display = 'none';
+    doneTitleStyles.display = 'none';
   }
+}
+
+function changeTitlesVisibility() {
+  changeVisibilityToDoTitle();
+  changeVisibilityDoneTitle();
 }
 
 function removeList(id) {
@@ -225,5 +235,5 @@ function removeList(id) {
     countDone = 0;
   }
   updateDataInLocalstorage();
-  rendrTitle();
+  changeTitlesVisibility();
 }
